@@ -16,6 +16,7 @@
 		6C13190B22FB6C6D0073A0E2 /* EmojiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C13190A22FB6C6D0073A0E2 /* EmojiCell.swift */; };
 		6C13190D22FE02DF0073A0E2 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C13190C22FE02DF0073A0E2 /* Manager.swift */; };
 		6C13191022FEE0DB0073A0E2 /* AddEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C13190F22FEE0DB0073A0E2 /* AddEditTableViewController.swift */; };
+		6C2842792301E2AF008AF3DF /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2842782301E2AF008AF3DF /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6C13190A22FB6C6D0073A0E2 /* EmojiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCell.swift; sourceTree = "<group>"; };
 		6C13190C22FE02DF0073A0E2 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		6C13190F22FEE0DB0073A0E2 /* AddEditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTableViewController.swift; sourceTree = "<group>"; };
+		6C2842782301E2AF008AF3DF /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				6C13190C22FE02DF0073A0E2 /* Manager.swift */,
+				6C2842782301E2AF008AF3DF /* DataManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				6C13191022FEE0DB0073A0E2 /* AddEditTableViewController.swift in Sources */,
 				6C13190722FB4E470073A0E2 /* Emoji.swift in Sources */,
 				6C13190B22FB6C6D0073A0E2 /* EmojiCell.swift in Sources */,
+				6C2842792301E2AF008AF3DF /* DataManager.swift in Sources */,
 				6C13190922FB57880073A0E2 /* EmojiTableViewController.swift in Sources */,
 				6C1318F122FB4D040073A0E2 /* AppDelegate.swift in Sources */,
 				6C13190D22FE02DF0073A0E2 /* Manager.swift in Sources */,

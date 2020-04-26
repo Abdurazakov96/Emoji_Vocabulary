@@ -9,9 +9,10 @@
 import UIKit
 
 class EmojiCell: UITableViewCell {
-
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet var symbolLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
-
 }

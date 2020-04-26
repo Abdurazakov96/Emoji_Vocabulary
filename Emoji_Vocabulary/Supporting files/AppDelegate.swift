@@ -11,9 +11,8 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    // MARK: - Public properites
+    
     var window: UIWindow?
-    
-    
-    
 }
 

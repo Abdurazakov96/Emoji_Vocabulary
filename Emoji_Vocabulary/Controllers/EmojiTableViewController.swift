@@ -10,14 +10,23 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
     
+    // MARK: - Public properites
     
     var cellManager = CellManager()
-    var emojis = Emoji.all
+    let dataManager = DataManager()
+    var emojis: [Emoji]! {
+        didSet{
+            dataManager.saveEmojis(emojis)
+        }
+        
+    }
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emojis = dataManager.loadEmojis() ?? Emoji.loadDefaults( )
         navigationItem.leftBarButtonItem = editButtonItem
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,12 +36,15 @@ class EmojiTableViewController: UITableViewController {
         let emoji = emojis[selectedPath.row]
         guard let destination = segue.destination as? AddEditTableViewController else {return}
         destination.emoji = emoji
-     
-        
     }
+    
 }
 
+// MARK: - Extension
+
 extension EmojiTableViewController {
+    
+    // MARK: - Lifecycle
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return emojis.count
@@ -52,14 +64,13 @@ extension EmojiTableViewController {
         tableView.reloadData()
     }
     
-    
-    
-    
-    
 }
 
+// MARK: - Extension
 
 extension EmojiTableViewController {
+    
+    // MARK: - Lifecycle
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
@@ -78,13 +89,17 @@ extension EmojiTableViewController {
         default:
             break
         }
+        
     }
-    
-    
     
 }
 
+// MARK: - Extension
+
 extension EmojiTableViewController {
+    
+    // MARK: - IBAction
+    
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
         
         guard segue.identifier == "saveSegue" else {return }
@@ -94,7 +109,7 @@ extension EmojiTableViewController {
         
         
         guard source.symbolTextField.text != "" else {return}
-
+        
         guard source.symbolTextField.text!.count <= 1 else {return}
         guard source.nameTextField.text != "" else {return}
         guard source.descriptionTextField.text != "" else {return}
@@ -105,13 +120,14 @@ extension EmojiTableViewController {
         if let selectedPath = tableView.indexPathForSelectedRow {
             emojis[selectedPath.row] = emoji
             tableView.reloadRows(at: [selectedPath], with: .automatic)
-            
         }
-            else {
+            
+        else {
             let indexpath = IndexPath(row: emojis.count, section: 0)
-                 emojis.append(emoji)
+            emojis.append(emoji)
             tableView.insertRows(at: [indexpath], with: .automatic)
-            }
+        }
         
     }
+    
 }
